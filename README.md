@@ -27,20 +27,12 @@ $ wget http://getcomposer.org/composer.phar
 $ php composer.phar install
 ```
 
-Now you can add the autoloader, and you will have access to the library:
+Now you can add the autoloader (if your framework doesn't already do this for you), and you will have access to the library:
 
 ``` php
 <?php
 
 require 'vendor/autoload.php';
-```
-
-If you don't use either **Composer** or a _ClassLoader_ in your application, just require the provided autoloader:
-
-``` php
-<?php
-
-require_once 'src/autoload.php';
 ```
 
 You're done.
