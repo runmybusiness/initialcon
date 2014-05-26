@@ -50,7 +50,7 @@ You're done.
 
 Images are generated in PNG format with a colored background & the initials in white text.
 
-The string can be an email, an IP address, a username, an ID or something else that is persistant between page loads.
+The string can be an email, an IP address, a username, an ID or something else that is persistant between page loads. This string determines the color of the icon background and will persist between pageloads so long as the string doesnt change.
 
 ### Generate an initialcon
 
