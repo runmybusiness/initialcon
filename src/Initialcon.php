@@ -37,11 +37,6 @@ class Initialcon
     private $pixelRatio;
 
     /**
-     * @var array
-     */
-    private $arrayOfSquare = array();
-
-    /**
      * Set the image size
      *
      * @param integer $size
@@ -132,22 +127,10 @@ class Initialcon
     private function convertHashToArrayOfBoolean()
     {
         preg_match_all('/(\w)(\w)/', $this->hash, $chars);
-        // foreach ($chars[1] as $i => $char) {
-        //     if ($i % 3 == 0) {
-        //         $this->arrayOfSquare[$i/3][0] = $this->convertHexaToBoolean($char);
-        //         $this->arrayOfSquare[$i/3][4] = $this->convertHexaToBoolean($char);
-        //     } elseif ($i % 3 == 1) {
-        //         $this->arrayOfSquare[$i/3][1] = $this->convertHexaToBoolean($char);
-        //         $this->arrayOfSquare[$i/3][3] = $this->convertHexaToBoolean($char);
-        //     } else {
-        //         $this->arrayOfSquare[$i/3][2] = $this->convertHexaToBoolean($char);
-        //     }
-        //     ksort($this->arrayOfSquare[$i/3]);
-        // }
 
-        $this->color[0] = hexdec(array_pop($chars[1]))*16;
-        $this->color[1] = hexdec(array_pop($chars[1]))*16;
-        $this->color[2] = hexdec(array_pop($chars[1]))*16;
+        $this->color[0] = hexdec(array_pop($chars[1])) * 16;
+        $this->color[1] = hexdec(array_pop($chars[1])) * 16;
+        $this->color[2] = hexdec(array_pop($chars[1])) * 16;
 
         return $this;
     }
@@ -161,17 +144,7 @@ class Initialcon
      */
     private function convertHexaToBoolean($hexa)
     {
-        return (bool) intval(round(hexdec($hexa)/10));
-    }
-
-    /**
-     *
-     *
-     * @return array
-     */
-    public function getArrayOfSquare()
-    {
-        return $this->arrayOfSquare;
+        return (bool) intval( round( hexdec($hexa) / 10 ) );
     }
 
     /**
@@ -225,7 +198,7 @@ class Initialcon
         if (false !== strpos($color, '#')) {
             $color = substr($color, 1);
         }
-        $this->color = hexdec(substr($color, 0, 2));
+        $this->color  = hexdec(substr($color, 0, 2));
         $this->color .= hexdec(substr($color, 2, 2));
         $this->color .= hexdec(substr($color, 4, 2));
 
