@@ -103,7 +103,7 @@ $initialcon->displayImage('TS', 'tom@test.com', 64, 'A87EDF');
 ### Image Object
 
 You can also grab the Image object to add more manipulation to the final icon (such as rounded corders, opacity, etc).
-We use the [http://image.intervention.io/](Intervention) library for image creation so all of its' methods are available to you.
+We use the [Intervention](http://image.intervention.io/) library for image creation so all of its' methods are available to you.
 
 ```php
 $initialcon->getImageObject('TS', 'tom@test.com', 512);
