@@ -278,6 +278,21 @@ class Initialcon
     }
 
     /**
+     * Display an Initialcon image
+     *
+     * @param string  $initials
+     * @param string  $identifier
+     * @param integer $size
+     * @param string $hexaColor
+     *
+     * @return Image
+     */
+    public function getImageObject($initials, $identifier, $size = 64, $hexaColor = null)
+    {
+        return $this->generateImage($initials, $identifier, $size, $hexaColor);
+    }
+
+    /**
      * Get an Initialcon PNG image data
      *
      * @param string  $initials

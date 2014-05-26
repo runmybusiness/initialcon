@@ -100,6 +100,14 @@ Color can be an hexadecimal with 6 characters
 $initialcon->displayImage('TS', 'tom@test.com', 64, 'A87EDF');
 ```
 
+### Image Object
+
+You can also grab the Image object to add more manipulation to the final icon (such as rounded corders, opacity, etc).
+
+```php
+$initialcon->getImageObject('TS', 'tom@test.com', 512);
+```
+
 That's it!
 
 ## Unit Tests
