@@ -190,7 +190,7 @@ class Initialcon
 
         if($this->fontPath == null)
         {
-            $this->setFontPath(__DIR__ . '/arial.ttf');
+            $this->setFontPath(__DIR__ . '/OpenSans-Regular.ttf');
         }
 
         $fontFilePath = $this->getFontPath();
