@@ -11,13 +11,13 @@
     bootstrap="vendor/autoload.php"
     >
     <testsuites>
-        <testsuite name="Identicon Test Suite">
+        <testsuite name="Initialcon Test Suite">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist>
-            <directory>./src/Identicon/</directory>
+            <directory>./src/Initialcon/</directory>
         </whitelist>
     </filter>
 </phpunit>

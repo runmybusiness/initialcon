@@ -1,28 +1,24 @@
 {
-    "name": "yzalis/identicon",
+    "name": "runmybusiness/initialcon",
     "type": "library",
-    "description": "Create awesome unique avatar.",
-    "keywords": ["identicon", "avatar", "image"],
-    "homepage": "http://identicon-php.org",
+    "description": "Create a GMail esque avatar based on the users intials & a persistant identifier such as an email address.",
+    "keywords": ["initialcon", "avatar", "image", "picture", "icon"],
+    "homepage": "http://runmybusiness.com",
     "license": "MIT",
     "authors": [
         {
-            "name": "Benjamin Laugueux",
-            "email": "benjamin@yzalis.com"
+            "name": "Tom Schlick",
+            "email": "tom@runmybusiness.com"
         }
     ],
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.3.0",
+        "intervention/image": "2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "1.2.*@dev"
     },
     "autoload": {
-        "psr-0": { "Identicon": "src/" }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
+        "psr-4": { "RunMyBusiness\\Initialcon\\": "src/" }
     }
 }
