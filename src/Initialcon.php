@@ -175,7 +175,7 @@ class Initialcon
 
         $image = Image::canvas($size, $size, $this->getColor());
 
-        $image->text($this->initials, ($size / 2.1), ($size / 2.1), function($font) use ($textSize, $fontFilePath){
+        $image->text($this->initials, ($size / 2), ($size / 2), function($font) use ($textSize, $fontFilePath){
             $font->size($textSize);
             $font->color('#ffffff');
             $font->align('center');
