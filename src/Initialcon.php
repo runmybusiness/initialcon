@@ -17,29 +17,29 @@ class Initialcon
     private $initials;
 
     /**
-     * @var integer
+     * @var int
      */
     private $color;
 
     /**
-     * @var integer
+     * @var int
      */
     private $size;
 
     /**
-     * @var integer
+     * @var int
      */
     private $fontPath;
 
     /**
-     * @var integer
+     * @var int
      */
     private $pixelRatio;
 
     /**
-     * Set the image size
+     * Set the image size.
      *
-     * @param integer $size
+     * @param int $size
      *
      * @return Initialcon
      */
@@ -52,9 +52,9 @@ class Initialcon
     }
 
     /**
-     * Get the image size
+     * Get the image size.
      *
-     * @return integer
+     * @return int
      */
     public function getSize()
     {
@@ -62,9 +62,9 @@ class Initialcon
     }
 
     /**
-     * Get the text size
+     * Get the text size.
      *
-     * @return integer
+     * @return int
      */
     public function getTextSize()
     {
@@ -72,7 +72,7 @@ class Initialcon
     }
 
     /**
-     * Generate a hash fron the identifier
+     * Generate a hash fron the identifier.
      *
      * @param string $string
      *
@@ -90,7 +90,7 @@ class Initialcon
     }
 
     /**
-     * Generate a hash fron the identifier
+     * Generate a hash fron the identifier.
      *
      * @param string $string
      *
@@ -110,7 +110,7 @@ class Initialcon
     }
 
     /**
-     * Get the Initialcon string hash
+     * Get the Initialcon string hash.
      *
      * @return string
      */
@@ -120,7 +120,7 @@ class Initialcon
     }
 
     /**
-     * Convert the hash into an multidimensionnal array of boolean
+     * Convert the hash into an multidimensionnal array of boolean.
      *
      * @return Initialcon
      */
@@ -136,22 +136,22 @@ class Initialcon
     }
 
     /**
-     * Convert an heaxecimal number into a boolean
+     * Convert an heaxecimal number into a boolean.
      *
      * @param string $hexa
      *
-     * @return boolean
+     * @return bool
      */
     private function convertHexaToBoolean($hexa)
     {
-        return (bool) intval( round( hexdec($hexa) / 10 ) );
+        return (bool) intval(round(hexdec($hexa) / 10));
     }
 
     /**
-     * Generate the Initialcon image
+     * Generate the Initialcon image.
      *
-     * @param string  $string
-     * @param integer $size
+     * @param string $string
+     * @param int    $size
      * @param string $hexaColor
      */
     private function generateImage($initials, $identifier, $size, $color)
@@ -161,9 +161,8 @@ class Initialcon
         $this->setSize($size);
         $textSize = $this->getTextSize();
 
-        if($this->fontPath == null)
-        {
-            $this->setFontPath(__DIR__ . '/OpenSans-Regular.ttf');
+        if ($this->fontPath == null) {
+            $this->setFontPath(__DIR__.'/OpenSans-Regular.ttf');
         }
 
         $fontFilePath = $this->getFontPath();
@@ -175,7 +174,7 @@ class Initialcon
 
         $image = Image::canvas($size, $size, $this->getColor());
 
-        $image->text($this->initials, ($size / 2), ($size / 2), function($font) use ($textSize, $fontFilePath){
+        $image->text($this->initials, ($size / 2), ($size / 2), function ($font) use ($textSize, $fontFilePath) {
             $font->size($textSize);
             $font->color('#ffffff');
             $font->align('center');
@@ -187,7 +186,7 @@ class Initialcon
     }
 
     /**
-     * Set the image color
+     * Set the image color.
      *
      * @param string $color The color in hexa (6 chars)
      *
@@ -198,7 +197,7 @@ class Initialcon
         if (false !== strpos($color, '#')) {
             $color = substr($color, 1);
         }
-        $this->color  = hexdec(substr($color, 0, 2));
+        $this->color = hexdec(substr($color, 0, 2));
         $this->color .= hexdec(substr($color, 2, 2));
         $this->color .= hexdec(substr($color, 4, 2));
 
@@ -206,7 +205,7 @@ class Initialcon
     }
 
     /**
-     * Get the color
+     * Get the color.
      *
      * @return string
      */
@@ -216,7 +215,7 @@ class Initialcon
     }
 
     /**
-     * Get the font path
+     * Get the font path.
      *
      * @return string
      */
@@ -226,7 +225,7 @@ class Initialcon
     }
 
     /**
-     * Set the font path
+     * Set the font path.
      *
      * @param string $path
      */
@@ -236,26 +235,26 @@ class Initialcon
     }
 
     /**
-     * Display an Initialcon image
+     * Display an Initialcon image.
      *
-     * @param string  $initials
-     * @param string  $identifier
-     * @param integer $size
+     * @param string $initials
+     * @param string $identifier
+     * @param int    $size
      * @param string $hexaColor
      */
     public function displayImage($initials, $identifier, $size = 64, $hexaColor = null)
     {
-        header("Content-Type: image/png");
+        header('Content-Type: image/png');
         $img = $this->generateImage($initials, $identifier, $size, $hexaColor);
         echo $img->encode('png');
     }
 
     /**
-     * Display an Initialcon image
+     * Display an Initialcon image.
      *
-     * @param string  $initials
-     * @param string  $identifier
-     * @param integer $size
+     * @param string $initials
+     * @param string $identifier
+     * @param int    $size
      * @param string $hexaColor
      *
      * @return Image
@@ -266,11 +265,11 @@ class Initialcon
     }
 
     /**
-     * Get an Initialcon PNG image data
+     * Get an Initialcon PNG image data.
      *
-     * @param string  $initials
-     * @param string  $identifier
-     * @param integer $size
+     * @param string $initials
+     * @param string $identifier
+     * @param int    $size
      * @param string $hexaColor
      *
      * @return string
@@ -278,15 +277,16 @@ class Initialcon
     public function getImageData($initials, $identifier, $size = 64, $hexaColor = null)
     {
         $img = $this->generateImage($initials, $identifier, $size, $hexaColor);
+
         return $img->encode('png');
     }
 
     /**
-     * Get an Initialcon PNG image data
+     * Get an Initialcon PNG image data.
      *
-     * @param string  $initials
-     * @param string  $identifier
-     * @param integer $size
+     * @param string $initials
+     * @param string $identifier
+     * @param int    $size
      * @param string $hexaColor
      *
      * @return string
