@@ -68,7 +68,7 @@ class Initialcon
      */
     public function getTextSize()
     {
-        return (strlen($this->initials) == 2) ? round($this->size / 1.5) : $this->size;
+        return (strlen($this->initials) === 2) ? round($this->size / 1.5) : $this->size;
     }
 
     /**
@@ -161,7 +161,7 @@ class Initialcon
         $this->setSize($size);
         $textSize = $this->getTextSize();
 
-        if ($this->fontPath == null) {
+        if ($this->fontPath === null) {
             $this->setFontPath(__DIR__.'/OpenSans-Regular.ttf');
         }
 
