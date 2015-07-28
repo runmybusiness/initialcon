@@ -1,6 +1,7 @@
 # Initial based icon generator for PHP
 
 [![Build Status](https://secure.travis-ci.org/runmybusiness/initialcon.png)](http://travis-ci.org/runmybusiness/initialcon)
+[![StyleCI](https://styleci.io/repos/20169615/shield)](https://styleci.io/repos/20169615)
 
 ![Initialcon example #1](doc/red.png)&nbsp;&nbsp;
 ![Initialcon example #2](doc/blue.png)&nbsp;&nbsp;
