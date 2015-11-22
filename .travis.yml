@@ -1,21 +1,18 @@
 language: php
-
 php:
-    - 5.5
-    - 5.6
-    - 7.0
-    - hhvm
-
+- 5.5
+- 5.6
+- 7.0
+- hhvm
 matrix:
   allow_failures:
-    - php: 7.0
-    - php: hhvm
-
+  - php: 7.0
+  - php: hhvm
 before_script:
-    - composer install
-
+- composer install
 script: phpunit --coverage-text
-
 notifications:
   hipchat:
-    - secure: "h3tSnZgVAgrXNadc90+zkLUkt/ZnDgkZg7f73liYWcnySndQRvi1bZg4tKUsCd6PqREVH03SEDGwdifGFOXXlsGZm1bix4n8WujmuQyjWHo0W9ad4UR4O75wmTCCsg9n/8jJjvYHG1d86lTEdqRpn525fWrmtZcTXVmKoW7B968="
+  - secure: h3tSnZgVAgrXNadc90+zkLUkt/ZnDgkZg7f73liYWcnySndQRvi1bZg4tKUsCd6PqREVH03SEDGwdifGFOXXlsGZm1bix4n8WujmuQyjWHo0W9ad4UR4O75wmTCCsg9n/8jJjvYHG1d86lTEdqRpn525fWrmtZcTXVmKoW7B968=
+  slack:
+    secure: dtCEbnISh0tdlKl6eXcdDNwK7y0cgIg3V4lnrpanzSosj1ZbO9LKsnW5hh3q2+LLL8PTxjJurQKm4GwM+aOUiNveGCLUgn4sDYkubILPHxykYcGTRvXEFHaEx57nZXLibF3yMYni3BPp5/vcK6Duy7FHb5wL+HRQqlPX6XE3k90=
